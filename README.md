@@ -62,7 +62,7 @@ Zookeeper: Kafka relies on Apache ZooKeeper for distributed coordination and man
 Kafka CLuster
 A Kafka cluster is a group of one or more Kafka brokers (servers) working together to manage the storage and exchange of data in the form of messages. Kafka is designed to operate as a distributed system, and a cluster allows it to scale horizontally, provide fault tolerance, and handle large volumes of data across multiple nodes. Kafka topics
 
-Kafka Broker
+Kafka Broker\n
 Kafka brokers form the core of the Kafka cluster, storing and managing the streams of records. Kafka topics
 
 Kafka Producer
