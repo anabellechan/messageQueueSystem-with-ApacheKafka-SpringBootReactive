@@ -90,3 +90,5 @@ To showcase the functionality of the application, I have developed two distinct 
 Producer Project: The producer project leverages the Spring Boot Reactive framework to extract a data stream from Wikimedia Recent Changes. This project is designed to efficiently read the streaming data and subsequently transmit the messages to a Kafka broker.
   
 Consumer Project: The consumer project complements the aforementioned producer by retrieving messages from the Kafka topic. The retrieved messages are then persisted into a DynamoDB database. This dual-project configuration not only demonstrates the integration of Spring Boot Reactive with Kafka for real-time data processing but also showcases the seamless storage of this data in a DynamoDB database, emphasizing end-to-end functionality within the application.
+
+Special thanks to Alibou for a brilliant tutorial on messaging queue systems that I spent hours working on :-)
