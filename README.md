@@ -10,17 +10,42 @@ Getting Started
 Running Kafka
 Ensure that Kafka is installed and running locally. You can download Kafka from the official Apache Kafka website.
 
+Refer to Kafka's website to: 
 Start a ZooKeeper server (required by Kafka):
 
-bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/zookeeper-server-start.sh config/zookeeper.properties (windows start differently, see below later on)
+
 Start a Kafka broker:
 
 bin/kafka-server-start.sh config/server.properties
-Project Setup
-Clone this repository and navigate to the project folder:
 
-git clone https://github.com/ali-bouali/apache-kafka-with-spring-boot-reactive
-cd apache-kafka-with-spring-boot-reactive
+# Commands needed (Windows):
+#start zookeeper first
+./bin/windows/zk-server-start.bat config/zookeeper.properties
+#start kafka server next
+"./bin/windows/kafka-server-start.bat" "config/server.properties"
+
+#create topics
+#shell
+./bin/windows/kafka-topics.bat --create --topic quickstart-events --bootstrap-server localhost:9092
+
+#to produce message
+./bin/windows/kafka-console-producer.bat --topic test-topic --bootstrap-server localhost:9092        
+hello this is the first message
+this is the second msg
+You can stop the producer client with Ctrl-C at any time.
+
+
+#to consume the message
+./bin/windows/kafka-console-consumer.bat --topic Belle --from-beginning --bootstrap-server localhost:9092
+
+#to list all the topics
+./bin/windows/kafka-topics.bat --list --bootstrap-server localhost:9092
+
+#For producing and consuming the real-time streaming data:
+https://stream.wikimedia.org/v2/stream/recentchange
+
+
 Key Concepts
 Apache Kafka is a distributed, fault-tolerant, and highly scalable message broker and stream processing platform. It was originally developed by LinkedIn and later open-sourced as an Apache Software Foundation project. Kafka is designed to handle large volumes of data streams in a real-time and fault-tolerant manner.
 
