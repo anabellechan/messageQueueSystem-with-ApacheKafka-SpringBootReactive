@@ -62,31 +62,31 @@ Zookeeper: Kafka relies on Apache ZooKeeper for distributed coordination and man
 Kafka CLuster
 A Kafka cluster is a group of one or more Kafka brokers (servers) working together to manage the storage and exchange of data in the form of messages. Kafka is designed to operate as a distributed system, and a cluster allows it to scale horizontally, provide fault tolerance, and handle large volumes of data across multiple nodes. Kafka topics
 
-Kafka Broker\n
+Kafka Broker  
 Kafka brokers form the core of the Kafka cluster, storing and managing the streams of records. Kafka topics
 
-Kafka Producer
+Kafka Producer  
 Producers are applications or systems that publish messages to Kafka topics. Producers determine which partition within a topic a message should be sent to. Kafka topics
 
-Kafka Consumer
+Kafka Consumer  
 Consumers are applications or systems that subscribe to Kafka topics and process the messages. Consumers can be part of a consumer group, allowing them to parallelize the processing of messages. Kafka topics
 
-Kafka Topics
+Kafka Topics  
 A Kafka topic is a category or feed name to which records (messages) are published. Topics help organize and categorize messages. Kafka topics
-Partitions
+Partitions  
 Topics are divided into partitions, allowing for parallel processing and scalability. Each partition is assigned to a specific broker. Kafka topics
-Offsets
+Offsets  
 Offsets represent the position of a message within a partition. Consumers use offsets to track their progress and resume processing from the last committed offset. Kafka topics
-Consumer Groups
+Consumer Groups  
 Consumer groups allow for parallel and scalable message processing. Consumers within a group coordinate to consume messages from one or more partitions. Kafka topics
-Serialization
+Serialization  
 Serialization is the process of converting data to a format suitable for transmission. Kafka allows custom serializers for key and value objects.
 
-Demo Application
-Kafka topics
+Demo Application  
+Kafka topics  
 
-To showcase the functionality of the application, I have developed two distinct projects:
-
+To showcase the functionality of the application, I have developed two distinct projects:  
+  
 Producer Project: The producer project leverages the Spring Boot Reactive framework to extract a data stream from Wikimedia Recent Changes. This project is designed to efficiently read the streaming data and subsequently transmit the messages to a Kafka broker.
-
+  
 Consumer Project: The consumer project complements the aforementioned producer by retrieving messages from the Kafka topic. The retrieved messages are then persisted into a DynamoDB database. This dual-project configuration not only demonstrates the integration of Spring Boot Reactive with Kafka for real-time data processing but also showcases the seamless storage of this data in a DynamoDB database, emphasizing end-to-end functionality within the application.
