@@ -19,6 +19,9 @@ Start a Kafka broker:
 
 bin/kafka-server-start.sh config/server.properties
 
+##Important: Using Windows I experienced errors setting up the Kafka Apache Server if navigating to long directories (like Desktop, Documents, etc..) 
+If experiencing such errors, place the Kafka zookeeper and broker server folders onto directories like C:/Kafka
+
 # Commands needed (Windows):
 #start zookeeper first
 ./bin/windows/zk-server-start.bat config/zookeeper.properties
